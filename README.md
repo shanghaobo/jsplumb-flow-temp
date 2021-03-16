@@ -1,21 +1,95 @@
-# jsplumb-test
+# jsplumb-flow-temp
 
-> A Vue.js project
+> jsplumb 拖拉拽流程图的模板，可直接进行二次开发
 
-## Build Setup
+![demo.png](demo.png)
 
-``` bash
-# install dependencies
-npm install
+## 数据结构
 
-# serve with hot reload at localhost:8080
-npm run dev
+- 节点基础结构
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+```json
+{
+  "id": "unaz8qu5jm",
+  "name": "类型1",
+  "type": "type1",
+  "left": "576px",
+  "top": "175px"
+}
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+- 线结构
+
+```json
+{ "from": "9ax5v67ix", "to": "fi39h1fyww" }
+```
+
+- 节点扩充属性配置
+
+```js
+// menu-list.js
+// 节点菜单属性配置
+export default [
+  {
+    id: 1,
+    name: "类型1",
+    type: "type1",
+    attrs: [
+      {
+        name: "name",
+        title: "标签文本",
+        default: "标签",
+        type: "text"
+      },
+      {
+        name: "state",
+        title: "状态",
+        default: "0",
+        type: "select",
+        option: [
+          {
+            value: "0",
+            label: "禁用"
+          },
+          {
+            value: "1",
+            label: "启用"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
+    name: "类型2",
+    type: "type2",
+    attrs: [
+      {
+        name: "name",
+        title: "标签文本",
+        default: "标签",
+        type: "text"
+      }
+    ]
+  },
+  {
+    id: 3,
+    name: "类型3",
+    type: "type3",
+    attrs: [
+      {
+        name: "name",
+        title: "标签文本",
+        default: "标签",
+        type: "text"
+      },
+      {
+        name: "icon",
+        title: "图标",
+        default: "el-icon-warning-outline",
+        type: "text"
+      }
+    ]
+  }
+];
+```
