@@ -2,7 +2,7 @@
 
 > jsplumb 拖拉拽流程图的模板，可直接进行二次开发
 
-![在线演示](https://shanghaobo.github.io/jsplumb-flow-temp/)
+[在线演示](https://shanghaobo.github.io/jsplumb-flow-temp/)
 
 ![demo.png](demo.png)
 
